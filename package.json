@@ -1,0 +1,25 @@
+{
+  "name": "hukk",
+  "version": "0.0.0",
+  "description": "Portable webhook for NodeJS micro-service",
+  "main": "dist/hukk.js",
+  "repository": "git@github.com:nampdn/hukk.git",
+  "author": "Nam Pham <nampdn@protonmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest",
+    "pretest": "npm run build"
+  },
+  "devDependencies": {
+    "rollup": "^0.67.1",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0"
+  },
+  "dependencies": {
+    "global": "^4.3.2",
+    "tern": "^0.23.0"
+  }
+}
