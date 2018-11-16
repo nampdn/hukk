@@ -11,12 +11,18 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "test": "jest",
+    "test:watch": "jest --watch",
     "pretest": "npm run build"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.9",
     "jest": "23.6.0",
     "rollup": "0.67.1",
     "rollup-plugin-commonjs": "9.2.0",
-    "rollup-plugin-node-resolve": "3.4.0"
+    "rollup-plugin-node-resolve": "3.4.0",
+    "rollup-plugin-typescript2": "^0.18.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.6"
   }
 }
