@@ -1,7 +1,7 @@
-import {createServer, Server} from 'http';
+import {createServer, Server, IncomingMessage, ServerResponse} from 'http';
 
 export interface HukkIncomingHandle {
-  (data: any): void;
+  (data: any): Promise<void | any> | any;
 }
 
 export interface HukkConfig {
@@ -11,22 +11,20 @@ export interface HukkConfig {
 
 export class Hukk {
   static DEFAULT_PORT: number = 5678;
-  port: number;
-  hooks: HukkConfig[];
+  port: number = Hukk.DEFAULT_PORT;
+  hooks: HukkConfig[] = [];
   server: Server;
 
   constructor() {
-    this.port = Hukk.DEFAULT_PORT;
-    this.hooks = [];
+    this.server = createServer(this._handleRequest.bind(this));
   }
 
   register(hook: HukkConfig) {
     this.hooks.push(hook);
   }
 
-  listen(port, callback?: () => void) {
+  listen(port: number, callback?: () => void) {
     this.port = port || Hukk.DEFAULT_PORT;
-    this.server = createServer(this._handleRequest);
     this.server.listen(this.port, 'localhost', () => {
       this._onStart();
       callback && callback();
@@ -43,8 +41,8 @@ export class Hukk {
     console.log(`Hukk is running on http://localhost:${this.port}`);
   }
 
-  private _handleRequest(req, res) {
-    const {url, method} = req;
+  private _handleRequest(req: IncomingMessage, res: ServerResponse) {
+    const {method} = req;
     if (method === 'POST') {
       let body = '';
       req.on('data', data => {
@@ -52,11 +50,44 @@ export class Hukk {
       });
       req.on('end', () => {
         res.writeHead(200, {'Content-Type': 'application/json'});
-        res.end('{"status": "received"}');
+        this._runHook(req, JSON.parse(body), (err: any, data: any) => {
+          if (err) {
+            this._responseError(res, err.message);
+          }
+          this._responseData(res, data);
+        });
       });
     } else {
       res.end(JSON.stringify({message: "Hukk doesn't support GET method!"}));
     }
+  }
+
+  private async _runHook(
+    req: IncomingMessage,
+    body: any,
+    callback: (err: any, data: any) => void,
+  ) {
+    const {url} = req;
+    const filterHooks: HukkConfig[] = this.hooks.filter(
+      h => h.endpoint === url,
+    );
+    for (let i = 0; i < filterHooks.length; i++) {
+      try {
+        const hookResult = await Promise.resolve(filterHooks[i].handle(body));
+        callback(null, hookResult);
+      } catch (err) {
+        callback(err, null);
+      }
+    }
+  }
+
+  private _responseData(res: ServerResponse, data: any) {
+    const result = JSON.stringify(data);
+    res.end(result);
+  }
+
+  private _responseError(res: ServerResponse, message: string) {
+    res.end(JSON.stringify({message}));
   }
 }
 
