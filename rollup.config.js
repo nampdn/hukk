@@ -11,7 +11,10 @@ module.exports = {
     format: 'cjs',
   },
   plugins: [
-    typescript({tsconfigDefaults: {compilerOptions: {declaration: true}}}),
+    typescript({
+      tsconfigDefaults: {compilerOptions: {declaration: true}},
+      tsconfig: "tsconfig.json"
+    }),
     nodeResolve({
       jsnext: true,
       main: true,
