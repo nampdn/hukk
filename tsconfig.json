@@ -3,8 +3,13 @@
     "target": "es2015",
     "module": "es2015",
     "declaration": true,
+    "declarationDir": "./types",
     "sourceMap": true,
     "strict": true,
-    "lib": ["es2015"]
-  }
+    "lib": ["es2015"],
+    "baseUrl": "./",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["tests/**/*.ts"]
 }
