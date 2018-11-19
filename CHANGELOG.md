@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/nampdn/hukk/compare/v1.1.1...v1.1.2) (2018-11-19)
+
+
+### Bug Fixes
+
+* **hukk:** not parse the plain text string ([f240f43](https://github.com/nampdn/hukk/commit/f240f43))
+
 ## [1.1.1](https://github.com/nampdn/hukk/compare/v1.1.0...v1.1.1) (2018-11-19)
 
 
