@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/nampdn/hukk/compare/v1.0.0...v1.1.0) (2018-11-19)
+
+
+### Features
+
+* **hukkup:** add hukkup function ([36b6b67](https://github.com/nampdn/hukk/commit/36b6b67))
+
 # 1.0.0 (2018-11-19)
 
 
