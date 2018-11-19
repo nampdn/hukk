@@ -49,8 +49,9 @@ export class Hukk {
         body += data;
       });
       req.on('end', () => {
+        const bodyData = {body: this._jsonOrText(body)}
         res.writeHead(200, {'Content-Type': 'application/json'});
-        this._runHook(req, JSON.parse(body), (err: any, data: any) => {
+        this._runHook(req, bodyData, (err: any, data: any) => {
           if (err) {
             this._responseError(res, err.message);
           }
@@ -78,6 +79,15 @@ export class Hukk {
       } catch (err) {
         callback(err, null);
       }
+    }
+  }
+
+  private _jsonOrText(str: string) {
+    try {
+      const json = JSON.parse(str)
+      return json
+    } catch (err) {
+      return str
     }
   }
 

@@ -34,7 +34,8 @@ const sendRequest = (
   req.end();
 };
 
-const postData = JSON.stringify({action: 'test', foo: 'bar'});
+const data = {action: 'test', foo: 'bar'};
+const postData = JSON.stringify(data);
 describe('hukk', () => {
   beforeAll(done => {
     hukk.listen(testPort, done);
@@ -51,14 +52,30 @@ describe('hukk', () => {
 
   it('hook response what it received', done => {
     const handle = (body: any) => {
-      return body
-    }
-    hukk.register({endpoint: '/another-webhook', handle})
-    sendRequest('/another-webhook', postData, (err, data) => {
-      expect(data).toEqual(postData)
-      done()
-    })
-  })
+      return body;
+    };
+    hukk.register({endpoint: '/another-webhook', handle});
+    sendRequest('/another-webhook', postData, (err, responseData) => {
+      const compareTo = JSON.parse(JSON.stringify({body: data}))
+      const compareFrom = JSON.parse(responseData)
+      expect(compareFrom).toEqual(compareTo);
+      done();
+    });
+  });
+
+  it('hook response with plain text', done => {
+    const text = 'plain text string'
+    const handle = (body: any) => {
+      return body;
+    };
+    hukk.register({endpoint: '/another-webhook', handle});
+    sendRequest('/another-webhook', text, (err, responseData) => {
+      const compareTo = JSON.parse(JSON.stringify({body: text}))
+      const compareFrom = JSON.parse(responseData)
+      expect(compareFrom).toEqual(compareTo);
+      done();
+    });
+  });
 
   afterAll(done => {
     hukk.close(done);
