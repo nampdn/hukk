@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/nampdn/hukk/compare/v1.1.0...v1.1.1) (2018-11-19)
+
+
+### Bug Fixes
+
+* **index:** not export default hukk instance correctly ([df4f866](https://github.com/nampdn/hukk/commit/df4f866))
+
 # [1.1.0](https://github.com/nampdn/hukk/compare/v1.0.0...v1.1.0) (2018-11-19)
 
 
