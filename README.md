@@ -1,6 +1,7 @@
-# hukk
+# hukk 
 Portable webhook for NodeJS micro-service
 
+[![npm version](https://badge.fury.io/js/hukk.svg)](https://badge.fury.io/js/hukk) [![Build Status](https://travis-ci.com/nampdn/hukk.svg?branch=master)](https://travis-ci.com/nampdn/hukk)
 ## Installation
 
 ```bash
