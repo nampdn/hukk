@@ -1,6 +1,6 @@
 {
   "name": "hukk",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Portable webhook for NodeJS micro-service",
   "main": "dist/hukk.js",
   "repository": "git@github.com:nampdn/hukk.git",
