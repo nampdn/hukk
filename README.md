@@ -13,26 +13,17 @@ yarn add hukk
 ```javascript
 import hukk from 'hukk'
 
-const hukker = hukk()
-
 // Register new hook object
-const handler = (req, res, data) => {
-  const {bar} = data
-  return {
-    foo: 
-  }
-}
-
-hukker.register({
+hukk.register({
   endpoint: '/webhook',
-  handler: (req, res, data) => {
-    return {
-      foo: 'bar'
-    }
+  handle: (data) => {
+    console.log(data)
   }
-})
+}) 
 
-hukker.listen(3000)
+hukk.listen(3000, () => {
+  console.log('Hook server listening on port 3000')
+})
 ```
 
 ### Send hook to another server
@@ -44,6 +35,6 @@ hukkup({host: 'localhost', port: 3000, endpoint: '/webhook', data}, (err, data) 
   if (err) {
     console.error(err)
   }
-  console.log('Response: ', data)
+  console.log('Response: ', data) // {"body": {"bar": "boo"}}
 })
 ```
