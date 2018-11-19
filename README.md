@@ -37,8 +37,13 @@ hukker.listen(3000)
 
 ### Send hook to another server
 ```javascript
-import {makeHook} from 'hukk'
+import {hukkup} from 'hukk'
 
-const foo = {bar: 'boo'}
-makeHook({host: 'localhost', port: 3000, endpoint: '/webhook'}, foo)
+const data = {bar: 'boo'}
+hukkup({host: 'localhost', port: 3000, endpoint: '/webhook', data}, (err, data) => {
+  if (err) {
+    console.error(err)
+  }
+  console.log('Response: ', data)
+})
 ```
