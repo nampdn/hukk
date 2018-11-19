@@ -15,6 +15,8 @@
     "pretest": "npm run build"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.1",
+    "@semantic-release/git": "^7.0.5",
     "@types/jest": "23.3.9",
     "@types/node": "10.12.9",
     "jest": "23.6.0",
@@ -22,6 +24,7 @@
     "rollup-plugin-commonjs": "9.2.0",
     "rollup-plugin-node-resolve": "3.4.0",
     "rollup-plugin-typescript2": "0.18.0",
+    "semantic-release": "^15.12.0",
     "ts-jest": "23.10.4",
     "typescript": "3.1.6"
   }
