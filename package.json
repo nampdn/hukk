@@ -2,6 +2,12 @@
   "name": "hukk",
   "version": "1.1.2",
   "description": "Portable webhook for NodeJS micro-service",
+  "keywords": [
+    "webhook",
+    "http",
+    "api",
+    "hook"
+  ],
   "main": "dist/hukk.js",
   "typings": "dist/index.d.ts",
   "repository": "git@github.com:nampdn/hukk.git",
