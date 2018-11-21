@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/nampdn/hukk/compare/v1.1.3...v1.1.4) (2018-11-21)
+
+
+### Bug Fixes
+
+* **readme:** typos on hukkup param object ([7e340f0](https://github.com/nampdn/hukk/commit/7e340f0))
+
 ## [1.1.3](https://github.com/nampdn/hukk/compare/v1.1.2...v1.1.3) (2018-11-20)
 
 
