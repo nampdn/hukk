@@ -33,7 +33,7 @@ hukk.listen(3000, () => {
 import {hukkup} from 'hukk'
 
 const data = {bar: 'boo'}
-hukkup({host: 'localhost', port: 3000, endpoint: '/webhook', data}, (err, data) => {
+hukkup({hostname: 'localhost', port: 3000, endpoint: '/webhook', data}, (err, data) => {
   if (err) {
     console.error(err)
   }
