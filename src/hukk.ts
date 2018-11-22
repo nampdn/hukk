@@ -30,7 +30,7 @@ export class Hukk {
     });
   }
 
-  close(callback: () => void) {
+  close(callback?: () => void) {
     if (this.server && this.server.listening) {
       this.server.close(callback);
     }
