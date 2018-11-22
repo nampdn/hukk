@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/nampdn/hukk/compare/v1.1.4...v1.1.5) (2018-11-22)
+
+
+### Bug Fixes
+
+* **hukk:** not display default log when listen has callback ([d25feaa](https://github.com/nampdn/hukk/commit/d25feaa))
+
 ## [1.1.4](https://github.com/nampdn/hukk/compare/v1.1.3...v1.1.4) (2018-11-21)
 
 
