@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/nampdn/hukk/compare/v1.1.5...v1.1.6) (2018-11-22)
+
+
+### Bug Fixes
+
+* **hukk:** not require callback always when close server ([073e7a1](https://github.com/nampdn/hukk/commit/073e7a1))
+
 ## [1.1.5](https://github.com/nampdn/hukk/compare/v1.1.4...v1.1.5) (2018-11-22)
 
 
