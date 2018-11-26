@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/nampdn/hukk/compare/v1.1.6...v1.1.7) (2018-11-26)
+
+
+### Bug Fixes
+
+* **hukk:** http server not bind to local machine ip ([5dc3fc8](https://github.com/nampdn/hukk/commit/5dc3fc8))
+
 ## [1.1.6](https://github.com/nampdn/hukk/compare/v1.1.5...v1.1.6) (2018-11-22)
 
 
