@@ -25,7 +25,7 @@ export class Hukk {
 
   listen(port: number, callback?: () => void) {
     this.port = port || Hukk.DEFAULT_PORT;
-    this.server.listen(this.port, 'localhost', () => {
+    this.server.listen(this.port, '0.0.0.0', () => {
       this._onStart(callback);
     });
   }
