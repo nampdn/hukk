@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/nampdn/hukk/compare/v1.1.7...v1.2.0) (2018-11-30)
+
+
+### Features
+
+* **hukk:** replace default GET message ([aa75617](https://github.com/nampdn/hukk/commit/aa75617))
+
 ## [1.1.7](https://github.com/nampdn/hukk/compare/v1.1.6...v1.1.7) (2018-11-26)
 
 
