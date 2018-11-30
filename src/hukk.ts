@@ -61,7 +61,7 @@ export class Hukk {
         });
       });
     } else {
-      res.end(JSON.stringify({message: "Hukk doesn't support GET method!"}));
+      res.end(JSON.stringify({message: `${process.env.APP_NAME || 'Hukk'} webhook server is working...`}));
     }
   }
 
