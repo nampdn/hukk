@@ -41,3 +41,15 @@ export const hukkup = (
   req.write(body);
   req.end();
 };
+
+export const hukkupAsync = (opts: HukkupOptions): Promise<any> => {
+  return new Promise((resolve, reject) => {
+    hukkup(opts, (err, res) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(res);
+      }
+    });
+  });
+}
