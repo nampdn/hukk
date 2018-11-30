@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/nampdn/hukk/compare/v1.2.0...v1.3.0) (2018-11-30)
+
+
+### Features
+
+* **hukkup:** add hukkupAsync function  ([54511af](https://github.com/nampdn/hukk/commit/54511af))
+
 # [1.2.0](https://github.com/nampdn/hukk/compare/v1.1.7...v1.2.0) (2018-11-30)
 
 
