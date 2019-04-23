@@ -34,7 +34,7 @@
     "rollup": "1.10.1",
     "rollup-plugin-commonjs": "9.3.4",
     "rollup-plugin-node-resolve": "4.2.3",
-    "rollup-plugin-typescript2": "0.20.1",
+    "rollup-plugin-typescript2": "0.21.0",
     "semantic-release": "15.13.3",
     "ts-jest": "24.0.2",
     "typescript": "3.4.5"
