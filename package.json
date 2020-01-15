@@ -27,7 +27,7 @@
   "devDependencies": {
     "@semantic-release/changelog": "3.0.6",
     "@semantic-release/git": "8.0.0",
-    "@types/jest": "24.0.25",
+    "@types/jest": "24.9.0",
     "@types/node": "10.12.24",
     "jest": "24.9.0",
     "rimraf": "3.0.0",
