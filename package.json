@@ -31,7 +31,7 @@
     "@types/node": "16.11.32",
     "jest": "28.0.3",
     "rimraf": "3.0.2",
-    "rollup": "2.70.2",
+    "rollup": "2.71.1",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-typescript2": "0.31.2",
