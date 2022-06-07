@@ -29,7 +29,7 @@
     "@semantic-release/git": "10.0.1",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.38",
-    "jest": "28.1.0",
+    "jest": "28.1.1",
     "rimraf": "3.0.2",
     "rollup": "2.75.5",
     "rollup-plugin-commonjs": "10.1.0",
